@@ -42,7 +42,8 @@
     "博客头模板"
     :group 'cnblogs)
   :type 'list
-  (defcustom cnblogs-file-root-path "~/.Cnblogs/"
+  ;;(defcustom cnblogs-file-root-path "~/.Cnblogs/"
+  (defcustom cnblogs-file-root-path "/mnt/d/eLvDayDayUp/cnblogs/"
     "数据文件的根目录"
     :group 'cnblogs
     :type 'string)
@@ -750,9 +751,11 @@
   (setq cnblogs-user-passwd
         (read-passwd "Your password:" nil ))
   (setq cnblogs-server-url
-        (concat "http://www.cnblogs.com/"
-                cnblogs-blog-id
-                "/services/metaweblog.aspx"))
+        ;;(concat "http://www.cnblogs.com/"cnblogs-blog-id
+	(concat "https://rpc.cnblogs.com/metaweblog/"
+		cnblogs-blog-id
+		;;"/services/metaweblog.aspx"
+		))
   (setq cnblogs-category-list
         (cnblogs-metaweblog-get-categories))
   (setq cnblogs-blog-info
